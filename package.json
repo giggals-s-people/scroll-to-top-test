@@ -1,7 +1,7 @@
 {
   "name": "scroll-to-top-lib",
   "description": "[기깔나는 사람들] React-Scroll-To-Top-library",
-  "version": "0.0.34-b",
+  "version": "1.1.0",
   "private": false,
   "main": "dist/index.js",
   "files": [
