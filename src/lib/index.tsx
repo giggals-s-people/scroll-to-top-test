@@ -2,6 +2,20 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
+
+interface Type {
+  /**
+   *  image - 기본 이미지가 있고, 추가로 사용자가 이미지를 넣으면 그걸로 나옵니다.
+   */
+  image?: string;
+  width?: string;
+  height?: string;
+  right?: string; // string으로 타입 설정
+  bottom?: string; // ? : 있냐고 확인, 있어도 되고 없어도 되지만 있으면 string으로 타입 설정
+  isMoveForHeight?: boolean;
+}
+
+
 export default function ScrollToTop({
   image,
   width,
@@ -9,16 +23,11 @@ export default function ScrollToTop({
   right,
   bottom,
   isMoveForHeight, // 사용자가 버튼 위치조정 가능하게 해주기
-}: {
-  image?: string;
-  width?: string;
-  height?: string;
-  right?: string; // string으로 타입 설정
-  bottom?: string; // ? : 있냐고 확인, 있어도 되고 없어도 되지만 있으면 string으로 타입 설정
-  isMoveForHeight?: boolean;
-}) {
+}: Type) {
   const [isTop, setIsTop] = useState(false);
   // isTop의 상태를 false로 정의하는 것 , isTop의 상태를 setIsTop으로 바꿔줄수도 있음
+
+
   const handleClick = () => {
     window.scrollTo({
       top: isMoveForHeight ? window.pageYOffset - window.innerHeight : 0,
