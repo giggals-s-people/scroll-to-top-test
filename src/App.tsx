@@ -1,12 +1,13 @@
-import React from 'react'
-import logo from './logo.svg'
-import './App.css'
-import ScrollToTop from './lib/index'
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import ScrollToTop from "./lib/index";
 function App() {
   return (
     <div className="App">
       <ScrollToTop />
       <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
         <img src={logo} className="App-logo" alt="logo" />
         <img src={logo} className="App-logo" alt="logo" />
         <img src={logo} className="App-logo" alt="logo" />
@@ -48,7 +49,7 @@ function App() {
         </a>
       </header>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
